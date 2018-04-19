@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class PlaySongService extends Service {
-    private MediaPlayer mediaPlayer1;
-    ImageButton btnNext,btnPrev;
+    ImageButton btnPlay,btnStop;
+    private MediaPlayer mediaPlayer;
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -18,25 +18,26 @@ public class PlaySongService extends Service {
     @Override
     public void onCreate(){
         super.onCreate();
-        mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.mysong);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.mysong);
     }
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
-        if(mediaPlayer1.isPlaying()){
-            mediaPlayer1.pause();
+        if(mediaPlayer.isPlaying()){
+            mediaPlayer.pause();
+            //btnPlay.setImageResource(R.drawable.ic_play);
         }else{
-            mediaPlayer1.start();
+            mediaPlayer.start();
+            //btnPlay.setImageResource(R.drawable.ic_pause);
         }
         return START_STICKY;
     }
 
-
     @Override
     public void onDestroy(){
-        mediaPlayer1.stop();
-        mediaPlayer1.release();
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        //btnPlay.setImageResource(R.drawable.ic_play);
         super.onDestroy();
-
     }
 
 }

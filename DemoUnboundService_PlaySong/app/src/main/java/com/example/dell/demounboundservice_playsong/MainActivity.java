@@ -10,25 +10,17 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    int position = 0;
-    ArrayList<PlaySongService> arraySong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AddSong();
-    }
-
-    private void AddSong() {
-
     }
 
     @SuppressLint("ResourceType")
     public void playSong(View view) {
         ImageButton imageButton ;
         imageButton = (ImageButton) findViewById(R.drawable.ic_play);
-
         Intent intent = new Intent(MainActivity.this, PlaySongService.class);
         this.startService(intent);
 
@@ -42,16 +34,4 @@ public class MainActivity extends AppCompatActivity {
         this.stopService(intent);
     }
 
-
-    @SuppressLint("ResourceType")
-    public void nextSong(View view) {
-        ImageButton btnNext;
-        btnNext = (ImageButton) findViewById(R.drawable.ic_next);
-        Intent intent = new Intent(MainActivity.this,PlaySongService.class);
-        //this.nextSerice(intent);
-
-    }
-
-    public void nextsong(View view) {
-    }
 }
