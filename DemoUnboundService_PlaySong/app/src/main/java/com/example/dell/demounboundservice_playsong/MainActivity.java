@@ -6,16 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import java.util.Map;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    int position = 0;
+    ArrayList<PlaySongService> arraySong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AddSong();
+    }
+
+    private void AddSong() {
+
     }
 
     @SuppressLint("ResourceType")
@@ -36,11 +42,16 @@ public class MainActivity extends AppCompatActivity {
         this.stopService(intent);
     }
 
-//    @SuppressLint("ResourceType")
-//    public void nextSong(View view) {
-//        ImageButton imageButton ;
-//        imageButton = (ImageButton) findViewById(R.drawable.ic_next);
-//        Intent intent = new Intent(MainActivity.this, PlaySongService.class);
-//
-//    }
+
+    @SuppressLint("ResourceType")
+    public void nextSong(View view) {
+        ImageButton btnNext;
+        btnNext = (ImageButton) findViewById(R.drawable.ic_next);
+        Intent intent = new Intent(MainActivity.this,PlaySongService.class);
+        //this.nextSerice(intent);
+
+    }
+
+    public void nextsong(View view) {
+    }
 }

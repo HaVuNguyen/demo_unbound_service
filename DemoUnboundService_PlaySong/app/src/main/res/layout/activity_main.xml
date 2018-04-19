@@ -7,17 +7,28 @@
     android:layout_height="match_parent"
     android:background="#663366"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Ten bai hat : "
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:padding="10dp"/>
 
     <ImageButton
         android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button_stop"
+        android:layout_marginStart="110dp"
+        android:background="@null"
         android:onClick="playSong"
         android:src="@drawable/ic_play"
-        android:text="Play" />
+        android:text="Play"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="110dp" />
 
     <ImageButton
         android:id="@+id/button_stop"
@@ -29,18 +40,21 @@
         android:layout_marginBottom="175dp"
         android:onClick="stopSong"
         android:src="@drawable/ic_stop"
+        android:background="@null"
         android:text="Stop" />
 
-    <!--<ImageButton-->
-        <!--android:id="@+id/button_next"-->
-        <!--android:layout_width="wrap_content"-->
-
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="178dp"-->
-        <!--android:onClick="nextSong"-->
-        <!--android:src="@drawable/ic_next"-->
-        <!--android:text="Next"  />-->
+    <ImageButton
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button_play"
+        android:layout_marginEnd="58dp"
+        android:background="@null"
+        android:onClick="nextsong"
+        android:src="@drawable/ic_next"
+        android:text="Next"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="58dp" />
 
 </RelativeLayout>
