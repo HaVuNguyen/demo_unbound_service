@@ -7,9 +7,12 @@ import android.os.IBinder;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+
 public class PlaySongService extends Service {
     ImageButton btnPlay,btnStop;
     private MediaPlayer mediaPlayer;
+    ArrayList<String> arrayList;
     @Override
     public IBinder onBind(Intent intent) {
         return null;
